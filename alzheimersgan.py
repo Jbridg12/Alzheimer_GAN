@@ -24,17 +24,9 @@ from os.path import join, isdir
 from zipfile import ZipFile
 tf.config.run_functions_eagerly(True)
 
-
 os.environ['KAGGLE_CONFIG_DIR'] = "./"
 
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content/gdrive/MyDrive/
-
 """# Image Processing"""
-
-with ZipFile('alzheimer-mri-dataset.zip', 'r') as zipper:
-  zipper.extractall()
-
 
 class_name = np.array([f for f in listdir('./Dataset') if isdir(join('./Dataset', f))])
 n_classes = len(class_name)
